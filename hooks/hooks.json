@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "SessionStart": [{
+      "matcher": "startup|resume|clear|compact|fork",
+      "hooks": [
+        { "type": "command", "command": "node \"${PLUGIN_ROOT}/hooks/lifecycle.mjs\" check-service", "commandWindows": "node \"${PLUGIN_ROOT}/hooks/lifecycle.mjs\" check-service", "statusMessage": "检查 MemoryUI 记忆服务", "timeout": 5, "async": false },
+        { "type": "command", "command": "node \"${PLUGIN_ROOT}/hooks/lifecycle.mjs\" workspace", "commandWindows": "node \"${PLUGIN_ROOT}/hooks/lifecycle.mjs\" workspace", "statusMessage": "登记 MemoryUI 会话与项目", "timeout": 5, "async": false }
+      ]
+    }],
+    "UserPromptSubmit": [{ "hooks": [
+      { "type": "command", "command": "node \"${PLUGIN_ROOT}/hooks/lifecycle.mjs\" workspace", "commandWindows": "node \"${PLUGIN_ROOT}/hooks/lifecycle.mjs\" workspace", "statusMessage": "更新 MemoryUI 工作区", "timeout": 5, "async": false },
+      { "type": "command", "command": "node \"${PLUGIN_ROOT}/hooks/capture-prompt.mjs\"", "commandWindows": "node \"${PLUGIN_ROOT}/hooks/capture-prompt.mjs\"", "statusMessage": "记录 MemoryUI 本轮用户消息", "timeout": 5, "async": false }
+    ]}],
+    "Stop": [{ "hooks": [
+      { "type": "command", "command": "node \"${PLUGIN_ROOT}/hooks/lifecycle.mjs\" workspace", "commandWindows": "node \"${PLUGIN_ROOT}/hooks/lifecycle.mjs\" workspace", "statusMessage": "更新 MemoryUI 项目归属", "timeout": 5, "async": false },
+      { "type": "command", "command": "node \"${PLUGIN_ROOT}/hooks/lifecycle.mjs\" save-memory", "commandWindows": "node \"${PLUGIN_ROOT}/hooks/lifecycle.mjs\" save-memory", "statusMessage": "保存 MemoryUI 对话与项目进展", "timeout": 5, "async": false }
+    ]}]
+  }
+}

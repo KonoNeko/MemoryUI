@@ -1,0 +1,13 @@
+.env
+.env.*
+node_modules/
+artifacts/
+*.log
+memory.json
+context-memory.json
+capture-requests.json
+profile-onboarding.json
+codex-prompt-events.json
+codex-lifecycle.json
+local-binding.json
+auth.json

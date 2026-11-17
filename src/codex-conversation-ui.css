@@ -1,0 +1,12 @@
+.codex-conversation-card h2 { display: flex; align-items: center; gap: 8px; }
+.codex-conversation-card .context-card-heading { align-items: start; }
+.codex-recording-state { display: inline-flex; align-items: center; min-height: 30px; padding: 3px 10px; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); background: var(--surface); font-size: 12px; white-space: nowrap; }
+.codex-recording-state.is-active { color: var(--green); background: var(--green-soft); }
+.codex-conversation-fields { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 16px; margin-top: 20px; }
+.codex-recording-receipt { display: flex; flex-wrap: wrap; gap: 16px 36px; padding-top: 16px; margin: 20px 0 0; border-top: 1px solid var(--border); }
+.codex-recording-receipt div { min-width: 120px; }
+.codex-recording-receipt dt { color: var(--muted); font-size: 12px; }
+.codex-recording-receipt dd { margin: 4px 0 0; font-size: 14px; font-weight: 500; }
+.codex-recording-feedback { margin-top: 14px; font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+.codex-recording-feedback.is-error { color: var(--danger); }
+@media (max-width: 600px) { .codex-conversation-fields { grid-template-columns: minmax(0, 1fr); gap: 0; } }

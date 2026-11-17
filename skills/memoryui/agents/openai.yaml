@@ -1,0 +1,4 @@
+interface:
+  display_name: "记忆间 MemoryUI"
+  short_description: "在当前对话启用共享记忆，按授权保存与召回，并打开角色面板"
+  default_prompt: "使用 $memoryui 启用我的记忆，先显示保存与读取范围供我授权。"
